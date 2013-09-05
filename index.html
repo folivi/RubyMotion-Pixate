@@ -31,15 +31,18 @@
     <!-- MAIN CONTENT -->
     <div id="main_content_wrap" class="outer">
       <section id="main_content" class="inner">
-        <h1>RubyMotion-Pixate</h1>
+        <h1>
+<a name="rubymotion-pixate" class="anchor" href="#rubymotion-pixate"><span class="octicon octicon-link"></span></a>RubyMotion-Pixate</h1>
 
 <p>Pixate gem for RubyMotion.</p>
 
-<h2>Requirements</h2>
+<h2>
+<a name="requirements" class="anchor" href="#requirements"><span class="octicon octicon-link"></span></a>Requirements</h2>
 
 <ul>
 <li>RubyMotion 1.0 or greater (see <a href="http://www.rubymotion.com">http://www.rubymotion.com</a>).</li>
-</ul><h2>Setup</h2>
+</ul><h2>
+<a name="setup" class="anchor" href="#setup"><span class="octicon octicon-link"></span></a>Setup</h2>
 
 <ol>
 <li>
@@ -58,20 +61,27 @@
 </li>
 <li>
 <p>Still in the <code>Rakefile</code>, set up the <code>user</code>, <code>key</code> and <code>framework</code> variables in your application configuration block. 
-For the <strong>free</strong> version of the Pixate Engine, <code>user</code> and <code>key</code> are <strong>not</strong> required.</p>
+This <strong>free</strong> key is available at <a href="http://pixate.com/key">http://pixate.com/key</a>.</p>
 
-<div class="highlight"><pre><span class="no">Motion</span><span class="o">::</span><span class="no">Project</span><span class="o">::</span><span class="no">App</span><span class="o">.</span><span class="n">setup</span> <span class="k">do</span> <span class="o">|</span><span class="n">app</span><span class="o">|</span>
+<div class="highlight"><pre><span class="ss">Motion</span><span class="p">:</span><span class="ss">:Project</span><span class="o">::</span><span class="no">App</span><span class="o">.</span><span class="n">setup</span> <span class="k">do</span> <span class="o">|</span><span class="n">app</span><span class="o">|</span>
 <span class="c1"># ...</span>
-<span class="n">app</span><span class="o">.</span><span class="n">pixate</span><span class="o">.</span><span class="n">user</span> <span class="o">=</span> <span class="s1">'USER ID'</span> <span class="c1"># Not required for free version</span>
-<span class="n">app</span><span class="o">.</span><span class="n">pixate</span><span class="o">.</span><span class="n">key</span>  <span class="o">=</span> <span class="s1">'KEY CODE'</span> <span class="c1"># Not required for free version</span>
+<span class="n">app</span><span class="o">.</span><span class="n">pixate</span><span class="o">.</span><span class="n">user</span> <span class="o">=</span> <span class="s1">'USER ID'</span> <span class="c1"># Valid key removes "splash screen"</span>
+<span class="n">app</span><span class="o">.</span><span class="n">pixate</span><span class="o">.</span><span class="n">key</span>  <span class="o">=</span> <span class="s1">'KEY CODE'</span> <span class="c1"># Visit pixate.com/key for a free key</span>
 <span class="n">app</span><span class="o">.</span><span class="n">pixate</span><span class="o">.</span><span class="n">framework</span> <span class="o">=</span> <span class="s1">'vendor/PXEngine.framework'</span>
 <span class="k">end</span>
+</pre></div>
+</li>
+<li>
+<p>Note: As of Pixate 1.1 beta 4, you need to add the following line to your <code>app_delegate</code> file in the <code>application(application, didFinishLaunchingWithOptions:launchOptions)</code> method before the <code>@window.makeKeyAndVisible</code> call:</p>
+
+<div class="highlight"><pre><span class="vi">@window</span><span class="o">.</span><span class="n">styleMode</span> <span class="o">=</span> <span class="no">PXStylingNormal</span>
 </pre></div>
 </li>
 <li><p>Create the <code>default.css</code> in <code>resources</code> directory.</p></li>
 </ol><p>Note: To install the motion-pixate gem, see the <a href="https://rubygems.org/gems/motion-pixate">RubyGems site</a>.</p>
 
-<h2>Example</h2>
+<h2>
+<a name="example" class="anchor" href="#example"><span class="octicon octicon-link"></span></a>Example</h2>
 
 <p>We'll take the Timer example that comes with RubyMotion and add Pixate and quickly style the application. Start by following the Setup steps above to add Pixate to the Timer project.</p>
 
@@ -79,7 +89,8 @@ For the <strong>free</strong> version of the Pixate Engine, <code>user</code> an
 
 <p><img src="https://raw.github.com/Pixate/RubyMotion-Pixate/master/Screenshots/timer_run.png" alt="Timer"></p>
 
-<h2>Add the CSS File</h2>
+<h2>
+<a name="add-the-css-file" class="anchor" href="#add-the-css-file"><span class="octicon octicon-link"></span></a>Add the CSS File</h2>
 
 <p>In the <code>default.css</code> file you added prior, let's add a simple entry:</p>
 
@@ -109,7 +120,8 @@ For the <strong>free</strong> version of the Pixate Engine, <code>user</code> an
 
 <p><img src="https://raw.github.com/Pixate/RubyMotion-Pixate/master/Screenshots/green_button.png" alt="Green Button"></p>
 
-<h2>Add a Styling ID</h2>
+<h2>
+<a name="add-a-styling-id" class="anchor" href="#add-a-styling-id"><span class="octicon octicon-link"></span></a>Add a Styling ID</h2>
 
 <p>Lastly, let's change the background color. Let's add an ID to our background view. In the <code>timer_controller.rb</code> file, add the following line before the <code>end</code> of <code>viewDidLoad</code>:</p>
 
@@ -127,7 +139,8 @@ For the <strong>free</strong> version of the Pixate Engine, <code>user</code> an
 
 <p><img src="https://raw.github.com/Pixate/RubyMotion-Pixate/master/Screenshots/background_view.png" alt="Final App"></p>
 
-<h2>SASS</h2>
+<h2>
+<a name="sass" class="anchor" href="#sass"><span class="octicon octicon-link"></span></a>SASS</h2>
 
 <p>Pixate gem supports <a href="http://sass-lang.com/">Sass</a> to generate the stylesheet. Create the <code>sass</code> directory and <code>default.scss</code> with the <code>rake pixate:init</code> command. Then, <code>rake pixate:sass</code> command generates the stylesheet from <code>default.scss</code>.</p>
 
@@ -138,7 +151,8 @@ For the <strong>free</strong> version of the Pixate Engine, <code>user</code> an
 
 <p>You could use <code>nested</code>, <code>expanded</code>, <code>compact</code> and <code>compressed</code> as output style.</p>
 
-<h2>REPL</h2>
+<h2>
+<a name="repl" class="anchor" href="#repl"><span class="octicon octicon-link"></span></a>REPL</h2>
 
 <p>Pixate gem provides "style" method in REPL. You could change the stylesheet at the moment in REPL. For example,</p>
 
